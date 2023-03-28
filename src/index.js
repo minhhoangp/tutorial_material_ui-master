@@ -6,16 +6,18 @@ import App from './App';
 import NotFound from './NotFound';
 import Rooms from './Rooms';
 import BookedRooms from './BookedRooms';
-
+import ViewRoom from './ViewRoom';
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />}>
-                    <Route path='rooms' element ={<Rooms />} />
-                    <Route path='bookedRooms' element ={<BookedRooms />} />
+                    <Route path='rooms' element ={<Rooms />}/>
+                    <Route path='rooms/viewRoom' element = {<ViewRoom/>} />
+                    <Route path='bookedRooms' element ={<BookedRooms />}/>        
                     <Route path="*" element={<NotFound />} />
+
                 </Route>
             </Routes>
         </BrowserRouter>

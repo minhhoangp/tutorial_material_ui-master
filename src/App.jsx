@@ -65,7 +65,7 @@ const Album = () => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Link to="/rooms">
+                  <Link to="rooms">
                     <Button
                       variant={selectedList === 'list1' ? 'contained' : 'outlined'}
                       onClick={() => {
@@ -78,7 +78,7 @@ const Album = () => {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to="/bookedRooms">
+                  <Link to="bookedRooms">
 
                     <Button
                       variant={selectedList === 'list2' ? 'contained' : 'outlined'}
