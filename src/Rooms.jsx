@@ -8,8 +8,14 @@ import BookRoomButton from './BookRoomButton'
 
 import NotificationButton from './NotificationButton'
 import ViewRoom from './ViewRoom';
+import { useDispatch, useSelector } from 'react-redux';
+import {updateGetRooms} from './redux/getRooms'
 
 const Rooms = () => {
+
+    const {value} = useSelector((state) => state.getRooms);
+    const dispatch = useDispatch();
+
     const classes = useStyles();
 
     const [allRoomsStatus, setAllRoomsStatus] = useState('idle');
@@ -44,6 +50,12 @@ const Rooms = () => {
     return (
 
         <Container className={classes.cardGrid} maxWidth="md">
+
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+                The value is {value}
+            </Typography>
+            <button onClick={() => dispatch(updateGetRooms())}> UPDATE ROOMS </button>
+
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 {notifIDs}
             </Typography>

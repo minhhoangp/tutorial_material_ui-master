@@ -8,8 +8,12 @@ import Rooms from './Rooms';
 import BookedRooms from './BookedRooms';
 import ViewRoom from './ViewRoom';
 
+import {Provider} from 'react-redux';
+import store from './redux/store'
+
 ReactDOM.render(
     <React.StrictMode>
+        <Provider store={store}>
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />}>
@@ -21,6 +25,7 @@ ReactDOM.render(
                 </Route>
             </Routes>
         </BrowserRouter>
+        </Provider>
     </React.StrictMode>,
     
     document.getElementById('root')
